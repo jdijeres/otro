@@ -1,2 +1,2 @@
 # otro
-a ver qué pasa
+no pasó nada la vez pasada
