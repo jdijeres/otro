@@ -1,0 +1,22 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Install
+        run: yarn
+      - name: Percy Test
+        uses: percy/exec-action@v0.3.1
+        with:
+          command: "cypress run"
+          custom-command: './tests/run-tests.sh'
+          exec-flags: "-t 150 -h cdn.example.com"
+          verbose: true
+          silence: false
+          passthrough: false
+          working-directory: "./client"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
