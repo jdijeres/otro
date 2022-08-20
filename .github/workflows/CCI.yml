@@ -26,5 +26,5 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     
       - name: Percy Test
-        run: npx @percy/cli snapshot "https://jdijeres.github.io/otro/"/ 
+        run: npx @percy/cli snapshot "https://jdijeres.github.io/otro/"
         # or any directory such as public/
