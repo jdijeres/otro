@@ -8,8 +8,6 @@ jobs:
         uses: actions/checkout@master
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
-      - name: Install
-        run: bundle install
       - name: Build
         run: bundle exec jekyll build
       - name: Default test
